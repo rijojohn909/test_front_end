@@ -30,9 +30,16 @@
 class="text-danger mb-2">
    Invalid Password
 </div>
+<div class="text-danger">
+    {{errorMsg}}
+</div>
               
                 <div class="mt-4">
-                    <button type="submit" class="btn btn-success">Login</button>
+                    <button type="submit" class="btn btn-success">Login
+                        <span *ngIf="successMsg" class="spinner-border text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </span>
+                    </button>
                     &nbsp;
                     <span>New User? Click Here to <a routerLink="/register">Register</a></span>
                 </div>

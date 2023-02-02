@@ -1,0 +1,74 @@
+<!-- navbar -->
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-primary " routerLink="/dashboard">
+      <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG_9JHMij1G2btenI-It1j8Tie3CrBRdOsQZOvvEIO-avd-yNtN8JvuJbNfHEC8jfzKNU&usqp=CAU" alt="Logo" width="50" height="40" class="d-inline-block align-text-top"> -->
+      <i class="fa-solid fa-2x fa-building-columns text-danger"></i> &nbsp; Online Banking App
+    </a>
+  </div>
+</nav>
+
+<!-- Ministatement Table -->
+<!-- <div class="container text-center">
+    <h4 class="text-primary">Mini Statement</h4>
+
+    <hr>
+<table width="100%">
+    <tr>
+      <th>Sl. Number</th>
+      <th>Transaction Type</th>
+      <th>From Account</th>
+      <th>To Account</th>
+      <th>Amount</th>  
+    </tr>
+   
+  </table>
+</div> -->
+
+<div class="container-fluid mt-2">
+  <h2 class="text-center text-danger">Mini Statement</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam repellat id sit atque quidem dolorum minima
+    eligendi quaerat nesciunt vel. Dolor ipsam aliquam perferendis tempore quaerat deserunt nisi minus natus! Lorem
+    ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptatem rem tenetur alias quisquam nulla accusantium
+    repellendus illo ex dolore. Laborum iure natus quo eveniet sit autem harum a. Repellat.</p>
+  <div class="container border mt-5">
+    <div class="row text-center mt-3">
+      <div class="col-lg-4">
+        <h3 class="text-success">Transaction History</h3>
+      </div>
+      <div class="col-lg-4">
+        <label for="search"><b>Search By:</b></label>&nbsp;
+        <input (keyup)="search($event)" id="search" type="text" placeholder="Transaction Type">
+      </div>
+      <div class="col-lg-4">
+<input (click)="generatepdf()" type="button" value="Export" class="btn btn-success" style="width:150px">
+      </div>
+    </div>
+    
+    <!-- table -->
+<table class="table border mt-3 text-center ">
+<thead>
+  <tr>
+    <th>No.</th>
+    <th>Transaction Type</th>
+    <th>From Account</th>
+    <th>To Account</th>
+    <th>Amount</th> 
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let transaction of allTransactions | filter : searchKey : 'type' ; let i=index">
+    <td>{{i+1}}</td>
+    <td>{{transaction.type}}</td>
+    <td>{{transaction.fromAcno}}</td>
+    <td>{{transaction.toAcno}}</td>
+    <td>{{transaction.amount}}</td>
+
+  </tr>
+ 
+
+</tbody>
+</table>
+
+  </div>
+</div>
