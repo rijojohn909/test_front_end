@@ -113,7 +113,7 @@ collapse(){
       (result:any)=>{
       alert(result.message)
       // navigate login
-this.router.navigateByUrl('/')
+this.router.navigateByUrl('/dashboard')
 
     },
     // client
