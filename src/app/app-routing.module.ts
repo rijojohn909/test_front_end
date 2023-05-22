@@ -17,12 +17,12 @@ const routes: Routes = [
 },
 {
   //dashboard-http://localhost:4200/dashboard
- path:'dashboard' , component:DashboardComponent
+ path:'dashboard', component:DashboardComponent
 },
-{
-  //miniStatement-http://localhost:4200/dashboard
- path:'ministatement' , component:MiniStatementComponent
-}
+// {
+//   //miniStatement-http://localhost:4200/dashboard
+//  path:'ministatement', component:MiniStatementComponent
+// }
 ];
 
 @NgModule({

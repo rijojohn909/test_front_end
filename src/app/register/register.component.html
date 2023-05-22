@@ -27,14 +27,14 @@ class="text-danger mb-2">
               </div>
 
                 <div class="form-floating mb-2">
-                  <input name="acno" formControlName="acno" type="text" class="form-control" id="floatingInput" placeholder="Account Number">
-                  <label for="floatingInput">Account Number</label>
+                  <input name="phno" formControlName="phno" type="text" class="form-control" id="floatingInput" placeholder="Account Number">
+                  <label for="floatingInput">Phone Number</label>
 
                 </div>
                 <!-- invalid acno -->
-<div *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched" 
+<div *ngIf="this.registerForm.get('phno')?.errors&&this.registerForm.get('phno')?.touched" 
  class="text-danger mb-2">
-    Invalid Account Number
+    Invalid Phone Number
 </div>
 
                 <div class="form-floating mb-2">
@@ -47,6 +47,23 @@ class="text-danger mb-2">
 class="text-danger mb-2">
    Invalid Password
 </div>
+
+<div class="form-floating mb-2">
+    <input name="ename" formControlName="ename" type="text" class="form-control" id="floatingEname" placeholder="Full Name">
+    <label for="floatingUser">Full name</label>
+<div *ngIf="this.registerForm.get('ename')?.errors&&this.registerForm.get('ename')?.touched" 
+class="text-danger mb-2">
+Invalid Employee name
+</div>
+  </div>
+  <div class="form-floating mb-2">
+    <input name="email" formControlName="email" type="text" class="form-control" id="floatingEmail" placeholder="E-mail">
+    <label for="floatingUser">E-mail ID</label>
+<div *ngIf="this.registerForm.get('email')?.errors&&this.registerForm.get('email')?.touched" 
+class="text-danger mb-2">
+Invalid E-mail
+</div>
+  </div>
               
                 <div class="mt-4">
                     <button type="submit" class="btn btn-success">Register</button>

@@ -14,22 +14,24 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
 
-  // register
-  register(uname:any,acno:any,pswd:any){
+  // register 
+  register(uname:any,phno:any,pswd:any,ename:any,email:any){
 
     const body={
-      acno,
       uname,
-      pswd
+      phno,
+      pswd,
+      ename,
+      email
     }
-    // server call to register an account and return response to register component
+    // server call to register an user  and return response to register component
     return this.http.post('http://localhost:3000/register',body)
   }
 
   // login
-  login(acno:any,pswd:any){
+  login(phno:any,pswd:any){
     const body = {
-      acno,
+      phno,
       pswd
     }
         // server call to register an account and return response to login component
@@ -57,10 +59,31 @@ export class ApiService {
   
 }
 
+// details
 
-   // get balance api
-   getBalance(acno:any){
-    return this.http.get('http://localhost:3000/getBalance/'+acno,this.appendToken())
+getDetails(phno:any){
+  return this.http.get('http://localhost:3000/getDetails/'+phno,this.appendToken())
+}
+   
+
+  // register 
+  editDetails(uname:any,phno:any,ename:any,email:any){
+
+    const body={
+      uname,
+      phno,
+      ename,
+      email
+    }
+    // server call to register an user  and return response to register component
+    return this.http.post('http://localhost:3000/editDetails',body)
+  }
+
+
+
+// get balance api
+   getBalance(phno:any){
+    return this.http.get('http://localhost:3000/getBalance/'+phno,this.appendToken())
   }
 
   // deposite api
@@ -88,8 +111,8 @@ return this.http.post('http://localhost:3000/fundTransfer',body,this.appendToken
   }
 
   // delete account Api
-  deleteAccount(acno:number){
-    return this.http.delete('http://localhost:3000/delete-account/'+acno,this.appendToken())
+  deleteAccount(phno:number){
+    return this.http.delete('http://localhost:3000/delete-account/'+phno,this.appendToken())
   }
 
 }

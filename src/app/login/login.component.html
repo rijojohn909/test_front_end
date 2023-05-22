@@ -5,19 +5,19 @@
 
 <div class="row ">
     <div class="col-7 ">
-<img class="m-5" height="400px" src="https://img.freepik.com/free-vector/mobile-payment-transfer-flat-vector-illustration-tiny-man-woman-sending-receiving-money-wireless-doing-remittance-with-help-smartphone-bank-deposit-cashless-business-concept_74855-25190.jpg?w=2000" alt="login image">
+<img class="m-5" height="400px" src="https://media-api.advertisingvietnam.com/oapi/v1/media?uuid=cca12331-217b-419a-84f0-ac95a981849f&resolution=1440x756&type=image" alt="login image">
     </div>
     <div class="col-5 mt-5">
         <form (ngSubmit)="login()" [formGroup]="loginForm" class="border p-5 mt-5 me-5">
                 <div class="form-floating mb-2">
-                  <input name="acno" formControlName="acno" type="text" class="form-control" id="floatingInput" placeholder="Account Number">
-                  <label for="floatingInput">Account Number</label>
+                  <input name="phno" formControlName="phno" type="text" class="form-control" id="floatingInput" placeholder="Account Number">
+                  <label for="floatingInput">Phone Number</label>
 
                 </div>
                 <!-- invalid acno -->
-<div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched" 
+<div *ngIf="this.loginForm.get('phno')?.errors&&this.loginForm.get('phno')?.touched" 
  class="text-danger mb-2">
-    Invalid Account Number
+    Invalid Phone Number
 </div>
 
                 <div class="form-floating mb-2">

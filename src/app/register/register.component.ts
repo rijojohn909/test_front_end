@@ -12,8 +12,11 @@ export class RegisterComponent {
   registerForm = this.fb.group({
     // array
     uname:['',[Validators.required, Validators.pattern('[a-zA-Z]*')]],
-    acno:['',[Validators.required, Validators.pattern('[0-9]*')]],
-    pswd:['',[Validators.required, Validators.pattern('[0-9a-zA-Z]*')]]
+    phno:['',[Validators.required, Validators.pattern('[0-9]*')]],
+    pswd:['',[Validators.required, Validators.pattern('[0-9a-zA-Z]*')]],
+    ename:['',[Validators.required, Validators.pattern('[a-zA-Z]*')]],
+    email:['',[Validators.required]],
+
   })
 
   constructor(private fb:FormBuilder, private api:ApiService, private router:Router){ }
@@ -21,9 +24,12 @@ export class RegisterComponent {
   register(){
     if(this.registerForm.valid){
     let uname = this.registerForm.value.uname
-    let acno = this.registerForm.value.acno
+    let phno = this.registerForm.value.phno
     let pswd = this.registerForm.value.pswd
-    this.api.register(uname,acno,pswd).
+    let ename = this.registerForm.value.ename
+    let email = this.registerForm.value.email
+
+    this.api.register(uname,phno,pswd,ename,email).
     subscribe(
       // success
       (result:any)=>{

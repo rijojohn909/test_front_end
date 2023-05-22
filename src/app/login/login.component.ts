@@ -16,7 +16,7 @@ export class LoginComponent {
   // login group
   loginForm = this.fb.group({
     // array
-    acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
+    phno:['',[Validators.required,Validators.pattern('[0-9]*')]],
     pswd:['',[Validators.required,Validators.pattern('[0-9a-zA-Z]*')]]
   })
 
@@ -26,10 +26,10 @@ export class LoginComponent {
 
   login(){
     if(this.loginForm.valid){
-      let acno = this.loginForm.value.acno
+      let phno = this.loginForm.value.phno
       let pswd = this.loginForm.value.pswd  
       // login call
-      this.api.login(acno,pswd)
+      this.api.login(phno,pswd)
       .subscribe(
         // success
         (result:any)=>{
@@ -37,7 +37,7 @@ export class LoginComponent {
           // store username in local storage
           localStorage.setItem("username",result.username)
           // store current acno
-          localStorage.setItem("currentAcno",JSON.stringify(result.currentAcno))
+          localStorage.setItem("currentPhno",JSON.stringify(result.currentPhno))
            // store token
            localStorage.setItem("token",result.token)
         // alert(result.message)
